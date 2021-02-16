@@ -100,6 +100,8 @@ The supplied Docker factory automatically creates a completely build Docker imag
 
 Helm chart is WIP.
 
+![Self-documenting API is fully interactive](API_screencap.png?raw=true "interactive API")
+
 ## API
 
 The REST API is self-documenting, thus once the service is running, the complete API specification (which for our demo only fetches outstanding loan balance by date) can be viewed at: https://locallost:5555/api/v1. This view let's you try out any API requests and methods interactively. Any new service routes added will automatically be added to the OAS (Openapi Specification) endpoint for their supported methods, which will be available via the web UI to try out. (And using Swagger Editor we can edit any information accessible at the interactive documentation endpoint.)  
