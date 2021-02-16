@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+
+  app-server:
+      build: loaninfo
+      container_name: loaninfo
+      command: python app.py
+      env_file:
+          .env
+      environment:
+        DATABASE_URL: postgresql+psycopg2://poggers:poggers@localhost/loan_info
+        LETSENCRYPT_EMAIL: themarsgroup@gmail.com
+      depends_on:
+        - psql-server
+      restart: always
+      ports:
+        - 5555:8080
+      command: /bin/bash /home/ubuntu/loaninfo/app.py -r -a
+
+  nginx-server:
+      build: nginx
+      container_name: nginx-server
+      image: jwilder/nginx-proxy:alpine
+      restart: always
+      depends_on:
+        - app-server
+      ports:
+        - 8000:80
+        - 443:443
+
+  psql-server:
+      build: psql
+      container_name: psql-server
+      image: postgres:9.6.2-alpine
+      restart: always
+      ports:
+        - "0.0.0.0:5432:5432"
+      environment:
+        POSTGRES_USER: poggers
+        POSTGRES_DB: loan_info
+
+  redis-server:
+      image: 'redis'
+      container_name: redis-server
+      image: redis:redis
+      restart: always
+      expose:
+        - 6379
+
+  letsencrypt:
+    restart: always
+    container_name: letsencrypt
+    image: nginx-proxy/docker-letsencrypt-nginx-proxy-companion
+    volumes:
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - certs:/etc/nginx/certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - nginx-proxy

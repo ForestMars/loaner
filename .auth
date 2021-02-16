@@ -1,0 +1,20 @@
+# secret placebolders
+
+## PSQL
+#export PSQL_PW=poggers!
+
+## Secrets
+export SECRET=7xBb5a7bYmF77BTS
+export API_KEY=topsecret
+export ACCESS_TOKEN_EXPIRES=False
+#export TOKEN_PASSING=query_string
+
+export JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTMyNTg0MTgsIm5iZiI6MTYxMzI1ODQxOCwianRpIjoiNmQ3NTM5NzEtZmQxMS00YjY3LTg3MDYtMDYwY2I5MWM4YTAxIiwiaWRlbnRpdHkiOiJ0ZXN0IiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.hyDh_HZXHOYhvEToBSt_Fry3DYuYUZddjYmpwKT873E
+
+## Vault
+export VAULT_ADDR=3.17.208.61
+export VAULT_PORT=8200
+export VAULT_TOKEN=s.1dxFtDZY2j8uxA6Hk9HZiQ9Q
+
+
+

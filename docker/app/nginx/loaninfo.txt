@@ -1,0 +1,9 @@
+server {
+  listen 5555;
+  server_name loaninfo;
+
+  location / {
+    proxy_pass http://8.222.98.146:5555
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+}
