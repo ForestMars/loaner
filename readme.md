@@ -1,6 +1,6 @@
 # Overview
 
-Loan Info is a complete, secure and scalable microservice example written in Python (and compiled to executable C code) to provide up to date and historical account information for loan payments. It has been written to meet requirements specified in Data Engineering Homework.pdf for Bread Payments, in consideration of a position in the Data Engineering group.
+Loan Info is a complete, secure and scalable microservice example written in Python (and compiled to executable C code) to provide up to date and historical account information for loan payments. 
 
 The application includes 2 implementations for containerized deployments. The supplied Docker compose file will bring up all service containers (app server, database server and caching server) running locally. Not included here is an additional configuration file for individually specifying targets to run each of the different services on. Rather, it’s expected that a distributed service mesh will be orchestrated using Kubernetes, presumably with Helm for deployment and service discovery.
 
