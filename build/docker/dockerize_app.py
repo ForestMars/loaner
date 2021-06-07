@@ -9,7 +9,9 @@ IMAGE_NAME=DOMAIN  # directory where Docker image will be saved in.
 FILE_NAME = DIR + IMAGE_NAME + '_latest.tar'
 
 DOCKER_USER = 'ubuntu'
-DOCKER_HOST = '18.222.98.146'  # Server Dockerized loaninfo app will be deployed to.
+DOCKER_HOST = os.environ['APP_SERVER_IP']  # Server Dockerized loaninfo app will be deployed to. Set as env variable by Terraform.
+# DOCKER_HOST = '18.222.98.146' 
+
 
 AWS_KEY = '' # os[env] or "~/.AWS/byjove1.pem"
 
