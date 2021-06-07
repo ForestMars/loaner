@@ -4,7 +4,7 @@ Loaner is a complete, secure and scalable microservice example written in Python
 
 The application includes 2 implementations for containerized deployments. The supplied Docker compose file will bring up all service containers (app server, database server and caching server) running locally. Not included here is an additional configuration file for individually specifying targets to run each of the different services on. Rather, it’s expected that a distributed service mesh will be orchestrated using Kubernetes, presumably with Helm for deployment and service discovery.
 
-Alternately, a custom “Docker factory” is included that will build a complete Docker image from the supplied Dockerfile, and deploy it to a remote server using credentials sourced from your environment settings, and automatically run it. This is pre-configured for AWS/debian but can be easily adapted for any Posix compatible endpoint.  Not included here is an option to deploy with Terraform, or finished Helm charts.
+Alternately, a custom “Docker factory” is included that will build a complete Docker image from the supplied Dockerfile, and deploy it to a remote server using credentials sourced from your environment settings, and automatically run it. This is pre-configured for AWS/debian but can be easily adapted for any Posix compatible endpoint.  Not included here is an option to deploy with [Terraform](https://github.com/ForestMars/terraform-station), or finished Helm charts.
 
 The service is written in Python and then compiled to C byte code. However this version includes the source files as a fallback. so it can be run without compiling *make build-arch* (or *docker-compose up*).
 
