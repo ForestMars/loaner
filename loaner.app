@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# app.py - Expose API for loan paymnt information.
+# loaner.app - Expose API for loan paymnt information.
 __version__ = '0.0.1'
 __author__ = 'Forest Mars' #
 
